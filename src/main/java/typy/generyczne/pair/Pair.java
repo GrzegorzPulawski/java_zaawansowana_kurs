@@ -1,6 +1,6 @@
 package typy.generyczne.pair;
 
-public class Pair<T> {
+public class Pair<T, V> {
     //Napisz klasę Pair, która będzie przyjmować dwa typy generyczne:
     //* typ first
     //* typ second
@@ -9,9 +9,9 @@ public class Pair<T> {
     //* first() -> która zwróci nam wartość first
     //* second() -> która zwróci nam wartość second
     private T first;
-    private T second;
+    private V second;
 
-    public Pair(T first, T second) {
+    public Pair(T first, V second) {
         this.first = first;
         this.second = second;
     }
@@ -20,7 +20,7 @@ public class Pair<T> {
         return this.first;
     }
 
-    public T getSecond() {
+    public V getSecond() {
         return this.second;
     }
 }
