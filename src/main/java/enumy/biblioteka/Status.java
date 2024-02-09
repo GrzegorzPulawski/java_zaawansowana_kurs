@@ -10,10 +10,14 @@ public enum Status {
     AVAILABLE("dostepny"),
     BORROWED("wypozyczony"),
     RESERVED("zarezerwowany");
-    String poPolsku;
+   private String poPolsku;
 
       private Status(String poPolsku) {
         this.poPolsku = poPolsku;
+    }
+
+    public String getPoPolsku() {
+        return poPolsku;
     }
 }
 

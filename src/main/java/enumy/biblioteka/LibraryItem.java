@@ -10,9 +10,14 @@ public  abstract class LibraryItem {
 
     private Status status;
 
+    public LibraryItem(Status status) {
+        this.status = status;
+    }
+
     public Status getStatus() {
         return status;
     }
+
 
     public void setStatus(Status status) {
         this.status = status;

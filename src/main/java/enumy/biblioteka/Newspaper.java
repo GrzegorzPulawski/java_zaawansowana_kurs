@@ -4,7 +4,7 @@ import java.text.DateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-public class Newspaper extends LibraryItem{
+public class Newspaper extends LibraryItem {
     //Klasa (class) - Klasa NewsPaper reprezentująca gazetę. Powinna zawierać datę wydania i wydawnictwo.
     //NewsPaper (Klasa)
     //Dziedziczy po LibraryItem
@@ -13,8 +13,10 @@ public class Newspaper extends LibraryItem{
     private String publishingHouse;
     private Date dateOfPrint;
 
-    private Newspaper(String publishingHouse, Date dateOfPrint) {
+    public Newspaper(Status status, String publishingHouse, Date dateOfPrint) {
+        super(status);
         this.publishingHouse = publishingHouse;
         this.dateOfPrint = dateOfPrint;
     }
 }
+

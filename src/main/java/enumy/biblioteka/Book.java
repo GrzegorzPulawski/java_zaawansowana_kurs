@@ -1,5 +1,6 @@
 package enumy.biblioteka;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Book extends LibraryItem implements Borrowable {
@@ -42,9 +43,10 @@ public class Book extends LibraryItem implements Borrowable {
         this.yearOfPublication = yearOfPublication;
     }
 
-    public Book(String title, String author, int yearOfPublication) {
+    public Book(Status status, String title, String author, int yearOfPublication) {
+        super(status);
         this.title = title;
-        this.author = author;
+        this.author = (showTimeOfPublishing(yearOfPublication) ? author.toUpperCase():author);
         this.yearOfPublication = yearOfPublication;
     }
 
@@ -52,23 +54,25 @@ public class Book extends LibraryItem implements Borrowable {
     public boolean borrowItem(Book book) {
         Status status = super.getStatus();
         if (status == Status.AVAILABLE) {
-            return true;
-        }
-        return false;
-    }
-    @Override
-    public boolean returnItem(Book book) {
-        Status status1 = super.getStatus();
-        if (status1 == Status.BORROWED){
+            super.setStatus(Status.BORROWED);
             return true;
         }
         return false;
     }
 
-    public void showTimeOfPublishing(int yearOfPublication ) {
-        if(yearOfPublication >5){
-            System.out.println("Książka jest starsza niz 5 lat)");
-            System.out.println(getAuthor().toUpperCase());
+    @Override
+    public boolean returnItem(Book book) {
+        if (super.getStatus() == Status.BORROWED) {
+            super.setStatus(Status.AVAILABLE);
+            return true;
         }
+        return false;
+    }
+
+    public boolean showTimeOfPublishing(int yearOfPublication) {
+        int actuallyYear = LocalDate.now().getYear();
+        if (yearOfPublication < actuallyYear - 5) {
+            return true;
+        }return false;
     }
 }
