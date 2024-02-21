@@ -33,6 +33,7 @@ public class Main {
         System.out.println(polecenie6(pracownikList));
         System.out.println(polecenie7(pracownikList));
         System.out.println(polecenie8(pracownikList));
+        System.out.println(polecenie9(pracownikList));
         System.out.println(polecenie10(pracownikList));
     }
     //Policzenie pracowników z działu IT.
@@ -84,6 +85,15 @@ public class Main {
                 .findFirst().get();
     }
     //Obliczenie różnicy wieku między najstarszym a najmłodszym pracownikiem (2 streamy mogą być wymagane).
+    public static int polecenie9(List<PracownikDTO> pracownicy){
+        int wiekNajstarszy = pracownicy.stream()
+                .mapToInt(PracownikDTO::getWiek).max().getAsInt();
+        int wiekNajmlodszy = pracownicy.stream()
+                .mapToInt(PracownikDTO::getWiek).min().getAsInt();
+        int wynik = wiekNajstarszy - wiekNajmlodszy;
+        return wynik;
+    }
+
     //Wypisz imiona pracowników którzy mają parzyste id a następnie zwróć Listę takich pracowników (wszystko w jednym stream'ie).
     public static List<PracownikDTO> polecenie10(List<PracownikDTO> pracownicy){
         return pracownicy.stream().filter(element -> element.getId() % 2 == 0)
