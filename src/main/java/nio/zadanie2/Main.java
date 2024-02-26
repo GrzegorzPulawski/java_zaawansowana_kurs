@@ -13,7 +13,7 @@ public class Main {
         //Napisz Loader do plików csv.
 
         // załadowanych rekordów.
-        String fileName ="C:\\Users\\szkol\\IdeaProjects\\Java_zaawansowana\\src\\main\\MojKatalog\\meaningful_data (1).csv";
+        String fileName ="C:\\Users\\szkol\\IdeaProjects\\Java_zaawansowana\\src\\main\\MojKatalog\\Ferie-wiel_Superstacj_02.19.csv\\\\\\\\\\\\";
         CSVData csvData = load(fileName);
         //informować o dostępnych kolumnach oraz ich liczbie,
         System.out.println("Dostępne kolumny");
