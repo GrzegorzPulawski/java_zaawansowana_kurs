@@ -1,13 +1,15 @@
 package programowanie.zadanie9;
-//import java.awt.geom.Point2D;
 
-public class Circle {
+
+public class Circle implements Movable{
+    Point2D center;
+    Point2D point;
+
     public Circle(Point2D center, Point2D point) {
-
+        this.center = center;
+        this.point = point;
     }
 
-    public Circle() {
-    }
 
     public double getRadius(Point2D center, Point2D point) {
         double radius = Math.sqrt(Math.pow(point.getX() - center.getX(), 2) + Math.pow(point.getY() - center.getY(), 2));
@@ -24,6 +26,21 @@ public class Circle {
         double radius = Math.sqrt(Math.pow(point.getX() - center.getX(), 2) + Math.pow(point.getY() - center.getY(), 2));
         return Math.PI * radius * radius;
     }
+
+    @Override
+       public void move(MoveDirection moveDirection) {
+        this.center.setX(this.center.getX() + moveDirection.getX());
+        this.center.setY(this.center.getY() + moveDirection.getY());
+        this.point.setX(this.point.getX() + moveDirection.getX());
+        this.point.setY(this.point.getY() + moveDirection.getY());
+
+    }
+    public Point2D getCenter() {
+        return this.center;
+    }
+
+
+
 }
 
 
