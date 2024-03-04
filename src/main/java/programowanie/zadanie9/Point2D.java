@@ -29,6 +29,14 @@ public class Point2D implements Movable{
     }
 
     @Override
+    public String toString() {
+        return "Point2D{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
+
+    @Override
     public void move(MoveDirection moveDirection) {
 
     }

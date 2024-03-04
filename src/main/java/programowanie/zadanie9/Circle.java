@@ -1,7 +1,7 @@
 package programowanie.zadanie9;
 
 
-public class Circle implements Movable{
+public class Circle implements Movable, Resizable{
     Point2D center;
     Point2D point;
 
@@ -38,9 +38,17 @@ public class Circle implements Movable{
     public Point2D getCenter() {
         return this.center;
     }
+    public Point2D getPoint(){
+        return this.point;
+    }
+
+    @Override
+    public double resize(double resizeFactor) {
+        double result = getArea(center,point );
 
 
-
+        return result * resizeFactor;
+    }
 }
 
 
