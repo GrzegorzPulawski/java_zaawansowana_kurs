@@ -9,7 +9,7 @@ public class Basket {
     // która usuwa element z koszyka (zmniejszając aktualny stan o 1).
     //Koszyk może przechowywać od 0 do 10 elementów. W przypadku, kiedy użytkownik chce wykonać akcję usunięcia przy stanie
     // 0 lub dodania przy stanie 10, rzuć odpowiedni runtime exception (BasketFullException lub BasketEmptyException).
-    private int count=0;
+   // private int count=0;
     List<String> basketsList = new ArrayList<>();
 
     public Basket() {

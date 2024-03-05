@@ -33,10 +33,7 @@ public class Basket2 {
     public class BasketFullException extends Exception {
     }
 
-    ;
-
     public class BasketEmptyException extends Exception {
     }
 
-    ;
 }
