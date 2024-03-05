@@ -11,7 +11,7 @@ public class Main {
 
         System.out.println(cone.calculateVolume());
 
-        cone.fill(3);
+        cone.fill(4);
 
     }
 }
