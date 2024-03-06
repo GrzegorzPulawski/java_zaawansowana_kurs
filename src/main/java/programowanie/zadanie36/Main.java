@@ -15,6 +15,9 @@ public class Main {
       //  pole1.start();
       //  pole2.start();
 
+        //Zadanie 37
+        //Stwórz klasę zawierającą standardową metodę statyczną main oraz zmienną typu Executor i korzystając z metody fabrykującej newFixedThreadPool klasy Executors utwórz pulę executorów o rozmiarze 2.
+        //W iteracji dodaj do Executora 10 obiektów klasy ThreadPlaygroundRunnable z poprzedniego zadania. Jako nazwy użyj dowolnego ciągu znaków oraz numeru aktualnej iteracj
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         for (int i = 0; i < 10; i++) {
             ThreadPlaygroundRunnable runnable = new ThreadPlaygroundRunnable("CosTam " + i);
